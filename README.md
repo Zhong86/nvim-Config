@@ -1,10 +1,18 @@
 # nvim-Config
 
-Plugins: 
+PLUGINS
+
+Visual: 
 -Catpuccin
 -Lualine
+
+Files:
 -Neotree
 -Telescope
 -Treesitter
--Mason
 
+Lsp: 
+-Mason
+-Nvim-lsp
+-Trouble
+-Telescope-ui

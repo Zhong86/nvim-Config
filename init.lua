@@ -1,4 +1,3 @@
---LAZY CONFIG
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -18,19 +17,6 @@ vim.opt.rtp:prepend(lazypath)
 --PLUGINS
 require("vim-options")
 require("lazy").setup("plugins")
-local builtin = require("telescope.builtin")
-
-
-
---KEYBINDS
-vim.keymap.set('n', '<C-f>', builtin.find_files, {})
-vim.keymap.set('n', '<leader>g', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>p', ':!php -l %<CR>', {noremap=true, silent=true})
-vim.keymap.set('n', '<leader>f', ':Neotree filesystem reveal left<CR>', {})
-vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
-vim.keymap.set('n', 'def', vim.lsp.buf.definition, {})
-vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, {})
-vim.keymap.set('n', "<leader>ow", '<cmd>lua vim.ui.open(vim.fn.expand("%"))<CR>', { desc = "Open HTML in browser" })
 
 vim.diagnostic.config({
   virtual_text = true, -- Show errors as inline text

@@ -1,30 +1,32 @@
  return  {
+  --Mason lsp config
   {
     "williamboman/mason.nvim",
     config = function()
       require("mason").setup()
     end
-  }, 
+  },
   {
-   "williamboman/mason-lspconfig.nvim", 
+   "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { 
+        ensure_installed = {
           "lua_ls",
-          "superhtml", 
+          "superhtml",
           "clangd"
         }
       })
     end
   },
   {
-    "neovim/nvim-lspconfig", 
+    "neovim/nvim-lspconfig",
     config = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
       vim.lsp.config('lua_ls', { capabilities = capabilities })
       vim.lsp.config('superhtml', {})
       vim.lsp.config('clangd', {})
-    end 
+      vim.lsp.config('vtsls', {})
+    end
   }
 }

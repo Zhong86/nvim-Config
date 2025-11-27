@@ -18,6 +18,12 @@ vim.opt.rtp:prepend(lazypath)
 require("vim-options")
 require("lazy").setup("plugins")
 
+--TODO CUSTOM PLUGIN
+local todoFloat = require("todoFloat")
+todoFloat.setup({
+  targetFile = "~/Documents/linuxPrj"
+})
+
 vim.diagnostic.config({
   virtual_text = true, -- Show errors as inline text
   signs = true,        -- Show signs in the sign column
@@ -33,3 +39,14 @@ vim.diagnostic.config({
     prefix = "",
   },
 })
+
+-- Enable cursorline and highlight only the line number
+vim.o.cursorline = true
+vim.o.cursorlineopt = "number"
+
+-- Customize the highlight group for the current line number (bold + foreground color)
+vim.cmd("autocmd ColorScheme * highlight CursorLineNr guifg=#F5E0DC gui=bold") -- example Catppuccin pink color
+
+-- Optionally set it once immediately if colorscheme already loaded
+vim.cmd("highlight CursorLineNr guifg=#F5E0DC gui=bold")
+

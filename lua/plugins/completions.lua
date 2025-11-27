@@ -1,6 +1,7 @@
 return {
   {
     'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-cmdline'
   },
   {
     'L3MON4D3/LuaSnip',
@@ -43,6 +44,13 @@ return {
             { name = 'buffer' },
           }
         )
+      })
+      cmp.setup.cmdline(':', {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = 'path' },    -- file path completion
+          { name = 'cmdline' } -- neovim commands completion
+        }
       })
     end
   }

@@ -4,6 +4,17 @@ return {
     require('lualine').setup({
       options = {
         theme = 'dracula'
+      }, 
+      sections = {
+        lualine_c = {
+          {
+            'filename', 
+            path = 1
+          }
+        },
+        lualine_x = {'filetype' },
+        lualine_y = {'location' },
+        lualine_z = {'hostname'}
       }
     })
   end

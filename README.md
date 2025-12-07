@@ -12,7 +12,7 @@ Files:
 -Treesitter
 
 Lsp: 
--Mason
--Nvim-lsp
 -Trouble
 -Telescope-ui
+
+No additional LSP, too bloated

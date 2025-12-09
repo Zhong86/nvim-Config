@@ -1,7 +1,7 @@
 local languages = {
   "lua", "php",
   "html", "css", "javascript", "json",
-  "c"
+  "c", "java"
 };
 
 return {
